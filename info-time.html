@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<title>テスト</title>
+		<meta content="text/html;charset="UTF-8">
+		<style type="text/css">
+			@import url(http://scp-jp.wdfiles.com/local--files/japanese-syntax/scp-WikidotCss.css);
+			body {
+				background-color: transparent;
+			}
+		</style>
+	</head>
+	<body>
+			<script type="text/javascript" src="http://scp-jp.wdfiles.com/local--files/japanese-syntax/scpHTMLblockCtrl_ver1_ex.js"></script>
+
+			<script type="text/javascript">
+				isHTMLblockHide = true;
+			</script>
+
+			<span id="time"></span>
+
+			<link rel="preconnect" href="https://fonts.gstatic.com">
+			<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+			<font face="Noto Sans JP">
+
+			<script type="text/javascript">
+				function getUrlVars() {
+				var vars = {};
+				var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) { vars[key] = value; });
+				return vars;
+				}
+
+				var hiduke = new Date();
+				var n = getUrlVars()["n"];
+
+				hiduke.setTime(hiduke.getTime() - n * 24 * 60 * 60 * 1000);
+
+				document.write(dateFormat(hiduke));
+
+				function dateFormat(date) {
+				var year = date.getFullYear();
+				var month = date.getMonth() + 1;
+				var week = date.getDay();
+				var day = date.getDate();
+				var yobi= new Array("日", "月", "火", "水", "木", "金", "土");
+				return year + "年" +  month + "月" + day + "日" + "（" + yobi[week] + "）";
+				}
+		</script>
+	</body>
+</html>
